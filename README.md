@@ -1,4 +1,5 @@
 # Django ecommerce
+[![Build Status](https://travis-ci.org/fnscoder/ecommerce.svg?branch=main)](https://travis-ci.org/fnscoder/ecommerce)
 
 ## Sobre as tecnologias
 Você deverá criar um projeto Django que utilize a biblioteca Django Rest Framework para
