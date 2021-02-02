@@ -1,7 +1,7 @@
-from rest_framework import viewsets, permissions
+from rest_framework import permissions, viewsets
 
-from products.models import Product
-from products.serializers import ProductSerializer
+from products.models import Category, Product
+from products.serializers import CategorySerializer, ProductSerializer
 
 
 class ProductModelViewSet(viewsets.ModelViewSet):
@@ -11,3 +11,9 @@ class ProductModelViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+
+class CategoryModelViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    permission_classes = (permissions.IsAuthenticated,)
