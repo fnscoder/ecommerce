@@ -37,7 +37,7 @@ class ProductsModelViewSetTestCase(APITestCase):
         self.assertEqual(response.data['name'], 'New product name')
         self.assertEqual(response.data['description'], 'New product description')
 
-    def test_list_events(self):
+    def test_list_products(self):
         request = self.factory.post(self.list_url, self.data, format='json')
         view = ProductModelViewSet.as_view({'post': 'create'})
         force_authenticate(request, self.user)
@@ -48,7 +48,7 @@ class ProductsModelViewSetTestCase(APITestCase):
         force_authenticate(request, self.user)
         response = view(request)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 2)
+        self.assertEqual(len(response.data['results']), 2)
         self.assertEqual(Product.objects.all().count(), 2)
 
     def test_update_product(self):
