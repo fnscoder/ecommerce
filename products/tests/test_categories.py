@@ -43,7 +43,7 @@ class CategoriesModelViewSetTestCase(APITestCase):
         force_authenticate(request, self.user)
         response = view(request)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 2)
+        self.assertEqual(len(response.data['results']), 2)
         self.assertEqual(Category.objects.all().count(), 2)
 
     def test_update_category(self):
