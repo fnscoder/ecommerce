@@ -39,7 +39,7 @@ class UserTestCase(APITestCase):
         request = self.factory.get(url, format='json')
         view = UserModelViewSet.as_view({'get': 'retrieve'})
         response = view(request, pk=self.user.pk)
-        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
     def test_partial_update_user(self):
         request = self.factory.patch(self.url, self.data, format='json')
