@@ -23,7 +23,7 @@ class UserTestCase(APITestCase):
         force_authenticate(request, self.user)
         response = view(request)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data[0]['id'], str(self.user.pk))
+        self.assertEqual(response.data['results'][0]['id'], str(self.user.pk))
 
     def test_retrieve_user(self):
         url = reverse('user-detail', kwargs={'pk': self.user.pk})
