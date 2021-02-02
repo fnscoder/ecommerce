@@ -1,5 +1,6 @@
 # Django ecommerce
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/0617f3d247140be8a5a1/maintainability)](https://codeclimate.com/github/fnscoder/ecommerce/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/0617f3d247140be8a5a1/test_coverage)](https://codeclimate.com/github/fnscoder/ecommerce/test_coverage)
 ## Sobre as tecnologias
 Você deverá criar um projeto Django que utilize a biblioteca Django Rest Framework para
 servir um Web Service. Você pode adicionar outras bibliotecas se achar necessário, mas o
